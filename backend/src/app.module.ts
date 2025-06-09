@@ -5,6 +5,7 @@ import { EndpointModule } from '@/routes/endpoint/endpoint.module';
 import { UserModule } from '@/routes/user/user.module';
 import { AuthModule } from '@/routes/auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
+import { PrismaService } from '@/prisma/prisma.service';
 
 @Module({
 	imports: [
@@ -16,6 +17,6 @@ import { ConfigModule } from '@nestjs/config';
 		}),
 	],
 	controllers: [AppController],
-	providers: [AppService],
+	providers: [AppService, PrismaService],
 })
 export class AppModule {}

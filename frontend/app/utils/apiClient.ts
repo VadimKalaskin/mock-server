@@ -12,5 +12,6 @@ export const getApiClient = async () => {
 			Authorization: accessToken ? `Bearer ${accessToken}` : '',
 		},
 		withCredentials: true,
+		timeout: 5000,
 	});
 };

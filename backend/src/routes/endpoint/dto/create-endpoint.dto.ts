@@ -7,7 +7,7 @@ export class CreateEndpointDto {
 	@IsString()
 	path: string;
 
-	@IsObject()
+	@IsString()
 	responseBody: any;
 
 	@IsInt()

@@ -24,8 +24,8 @@ model Endpoint {
     User         User?    @relation(fields: [userId], references: [id])
     userId       String?
 
-    @@unique([method, path], map: "uniq_endpoint_method_path")
-    @@index([method, path], map: "idx_endpoint_method_path")
+    @@unique([method, path, userId], map: "uniq_endpoint_method_path_userid")
+    @@index([method, path, userId], map: "idx_endpoint_method_path_userid")
     @@map("endpoint")
 }
 

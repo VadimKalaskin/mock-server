@@ -1,18 +1,28 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from '../../prisma/prisma.service';
+import { PrismaService } from '@/prisma/prisma.service';
 import { CreateEndpointDto } from './dto/create-endpoint.dto';
 import { UpdateEndpointDto } from './dto/update-endpoint.dto';
+import { Request } from 'express';
 
 @Injectable()
 export class EndpointService {
 	constructor(private prisma: PrismaService) {}
 
-	async create(data: CreateEndpointDto) {
-		return this.prisma.endpoint.create({ data });
+	async create(data: CreateEndpointDto, req: Request) {
+		return this.prisma.endpoint.create({
+			data: {
+				...data,
+				userId: req['user']?.id,
+			},
+		});
 	}
 
-	async findAll() {
-		return this.prisma.endpoint.findMany();
+	async findAll(req: Request) {
+		return this.prisma.endpoint.findMany({
+			where: {
+				userId: req['user']?.id as string,
+			},
+		});
 	}
 
 	async findOne(id: string) {

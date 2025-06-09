@@ -29,13 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
-      <NextTopLoader />
       {children}
-        <ToastContainer
-            position={'bottom-center'}
-            autoClose={2000}
-            closeOnClick
-        />
       </body>
     </html>
   );
