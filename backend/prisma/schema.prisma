@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Endpoint {
+    id           String   @id @default(uuid())
+    method       String
+    path         String   @unique(map: "endpoint_method_path") // уникальная комбинация с method
+    responseBody Json
+    statusCode   Int      @default(200)
+    delay        Int?
+    createdAt    DateTime @default(now())
+    updatedAt    DateTime @updatedAt
+
+    @@unique([method, path], map: "uniq_endpoint_method_path")
+    @@index([method, path], map: "idx_endpoint_method_path")
+}
