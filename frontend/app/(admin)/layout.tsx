@@ -1,6 +1,6 @@
 import NextTopLoader from "nextjs-toploader";
 import {ToastContainer} from "react-toastify";
-import {NavBar} from "@/shared/NavBar";
+import {NavBar} from "@/components/shared/NavBar";
 
 
 export default function AdminLayout({children}: Readonly<{children: React.ReactNode}>) {

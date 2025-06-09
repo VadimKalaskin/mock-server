@@ -27,7 +27,7 @@ export default function RegisterPage() {
 
 			if (res.data.accessToken){
 				setAccessToken(res.data.accessToken);
-				router.push('/admin/my-endpoints');
+				router.push('/admin/endpoints');
 			}
 		} catch (error: any) {
 			toast.error(error.response?.data?.message);
@@ -81,9 +81,14 @@ export default function RegisterPage() {
 					>
 						Войти
 					</Button>
-					<Button variant={'text'} href={'/admin/forgot-password'}>
-						Забыли пароль?
-					</Button>
+					<div className='flex justify-between'>
+						<Button variant={'text'} href={'/forgot-password'}>
+							Забыли пароль?
+						</Button>
+						<Button variant={'text'} href={'/login'}>
+							Уже есть аккаунт?
+						</Button>
+					</div>
 				</Box>
 			</Box>
 		</Container>

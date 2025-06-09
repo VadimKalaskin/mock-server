@@ -4,26 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65f5449b-da8f-4262-92f0-0fd14bb4a3e2" name="Changes" comment="Auth">
-      <change afterPath="$PROJECT_DIR$/frontend/app/(admin)/admin/endpoints/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/(admin)/admin/endpoints/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/(admin)/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/actions/createEndpoint.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/shared/NavBar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/types/endpoint.type.ts" afterDir="false" />
+    <list default="true" id="65f5449b-da8f-4262-92f0-0fd14bb4a3e2" name="Changes" comment="Admin panel, delay for endpoints">
+      <change afterPath="$PROJECT_DIR$/backend/src/routes/route/route.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/routes/route/route.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/routes/route/route.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/routes/route/route.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/routes/route/route.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.controller.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/endpoint/dto/create-endpoint.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/endpoint/dto/create-endpoint.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.service.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/routes/endpoint/endpoint.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/endpoint/endpoint.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/endpoint/endpoint.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/endpoint/endpoint.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/routes/endpoint/endpoint.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/endpoint/endpoint.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(admin)/admin/my-endpoints/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/utils/apiClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/utils/apiClient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/(auth)/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/(auth)/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/(auth)/register/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/(auth)/register/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +111,7 @@
       <updated>1749441782390</updated>
       <workItem from="1749441783412" duration="3689000" />
       <workItem from="1749445621862" duration="11995000" />
-      <workItem from="1749476793766" duration="4744000" />
+      <workItem from="1749476793766" duration="7521000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -140,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749464758133</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Admin panel, delay for endpoints">
+      <option name="closed" value="true" />
+      <created>1749481759836</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1749481759836</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +160,7 @@
     <MESSAGE value="init" />
     <MESSAGE value="prisma, endpoint resource" />
     <MESSAGE value="Auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="Auth" />
+    <MESSAGE value="Admin panel, delay for endpoints" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin panel, delay for endpoints" />
   </component>
 </project>

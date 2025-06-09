@@ -15,14 +15,14 @@ enum UserRole {
 model Endpoint {
     id           String   @id @default(uuid())
     method       String
-    path         String   @unique(map: "endpoint_method_path") // уникальная комбинация с method
+    path         String   @unique(map: "endpoint_method_path")
     responseBody Json
     statusCode   Int      @default(200)
     delay        Int?
     createdAt    DateTime @default(now())
     updatedAt    DateTime @updatedAt
     User         User?    @relation(fields: [userId], references: [id])
-    userId       String?
+    userId       Int?
 
     @@unique([method, path, userId], map: "uniq_endpoint_method_path_userid")
     @@index([method, path, userId], map: "idx_endpoint_method_path_userid")
@@ -30,7 +30,7 @@ model Endpoint {
 }
 
 model User {
-    id           String     @id @default(cuid())
+    id           Int        @id @default(autoincrement())
     email        String     @unique
     passwordHash String
     isActive     Boolean    @default(true)

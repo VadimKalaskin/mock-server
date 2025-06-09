@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '@/prisma/prisma.service';
 import { CreateEndpointDto } from './dto/create-endpoint.dto';
 import { UpdateEndpointDto } from './dto/update-endpoint.dto';
@@ -20,7 +20,7 @@ export class EndpointService {
 	async findAll(req: Request) {
 		return this.prisma.endpoint.findMany({
 			where: {
-				userId: req['user']?.id as string,
+				userId: req['user']?.id as number,
 			},
 		});
 	}

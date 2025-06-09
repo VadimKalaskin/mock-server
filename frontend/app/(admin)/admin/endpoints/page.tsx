@@ -16,8 +16,6 @@ export default async function Page() {
 	const client = await getApiClient();
 	const endpoints: EndpointType[] = await client.get('/endpoint').then(res => res.data);
 
-	console.log(endpoints);
-
 	return (
 		<Container maxWidth="lg" sx={{ mt: 4 }}>
 			<Typography variant="h5" gutterBottom>
@@ -30,6 +28,7 @@ export default async function Page() {
 						<TableRow>
 							<TableCell>Метод</TableCell>
 							<TableCell align="center">Путь</TableCell>
+							<TableCell align="center">Полный путь</TableCell>
 							<TableCell align="center">Код ответа</TableCell>
 							<TableCell align="center">Задержка</TableCell>
 							<TableCell align="right">Дата создания</TableCell>
@@ -43,6 +42,7 @@ export default async function Page() {
 									{row.method}
 								</TableCell>
 								<TableCell align="center">{row.path}</TableCell>
+								<TableCell align="center">{`/api/route/${row.userId}/${row.path}`}</TableCell>
 								<TableCell align="center">{row.statusCode}</TableCell>
 								<TableCell align="center">{row.delay ?? '-'}</TableCell>
 								<TableCell align="right">

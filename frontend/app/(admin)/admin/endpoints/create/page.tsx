@@ -47,7 +47,7 @@ export default function Page() {
 						name="path"
 						label="Путь (Path)"
 						variant="outlined"
-						defaultValue="/getProducts"
+						defaultValue="getProducts"
 					/>
 
 					{/* Тело ответа */}

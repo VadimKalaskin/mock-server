@@ -9,8 +9,8 @@ import {
 	HttpStatus,
 	HttpCode,
 	UseGuards,
-	Res,
 	Req,
+	All,
 } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiBody, ApiParam } from '@nestjs/swagger';
 
