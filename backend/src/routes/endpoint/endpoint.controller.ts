@@ -19,13 +19,14 @@ import { CreateEndpointDto } from './dto/create-endpoint.dto';
 import { UpdateEndpointDto } from './dto/update-endpoint.dto';
 import { AuthGuard } from '@/guards/auth.guard';
 import { Request } from 'express';
+import { ThrottlerGuard } from '@nestjs/throttler';
 
 @ApiTags('Endpoint')
 @Controller('endpoint')
 export class EndpointController {
 	constructor(private readonly service: EndpointService) {}
 
-	@UseGuards(AuthGuard)
+	@UseGuards(AuthGuard, ThrottlerGuard)
 	@Post()
 	@HttpCode(HttpStatus.CREATED)
 	@ApiOperation({ summary: 'Create a new endpoint' })
@@ -35,7 +36,7 @@ export class EndpointController {
 		return this.service.create(dto, req);
 	}
 
-	@UseGuards(AuthGuard)
+	@UseGuards(AuthGuard, ThrottlerGuard)
 	@Get()
 	@ApiOperation({ summary: 'Get all endpoints' })
 	@ApiResponse({ status: 200, description: 'List of endpoints' })
@@ -43,17 +44,7 @@ export class EndpointController {
 		return this.service.findAll(req);
 	}
 
-	@UseGuards(AuthGuard)
-	@Get(':id')
-	@ApiOperation({ summary: 'Get endpoint by ID' })
-	@ApiParam({ name: 'id', type: 'string' })
-	@ApiResponse({ status: 200, description: 'Found endpoint' })
-	@ApiResponse({ status: 404, description: 'Endpoint not found' })
-	findOne(@Param('id') id: string) {
-		return this.service.findOne(id);
-	}
-
-	@UseGuards(AuthGuard)
+	@UseGuards(AuthGuard, ThrottlerGuard)
 	@Put(':id')
 	@ApiOperation({ summary: 'Update endpoint by ID' })
 	@ApiParam({ name: 'id', type: 'string' })
@@ -64,7 +55,7 @@ export class EndpointController {
 		return this.service.update(id, dto);
 	}
 
-	@UseGuards(AuthGuard)
+	@UseGuards(AuthGuard, ThrottlerGuard)
 	@Delete(':id')
 	@HttpCode(HttpStatus.NO_CONTENT)
 	@ApiOperation({ summary: 'Delete endpoint by ID' })

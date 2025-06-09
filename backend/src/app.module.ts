@@ -5,6 +5,7 @@ import { AuthModule } from '@/routes/auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { PrismaService } from '@/prisma/prisma.service';
 import { RouteModule } from '@/routes/route/route.module';
+import { ThrottlerModule } from '@nestjs/throttler';
 
 @Module({
 	imports: [
@@ -15,6 +16,14 @@ import { RouteModule } from '@/routes/route/route.module';
 			isGlobal: true,
 		}),
 		RouteModule,
+		ThrottlerModule.forRoot({
+			throttlers: [
+				{
+					ttl: 60000,
+					limit: 10,
+				},
+			],
+		}),
 	],
 	controllers: [],
 	providers: [PrismaService],
