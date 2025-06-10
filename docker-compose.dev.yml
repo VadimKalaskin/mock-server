@@ -1,0 +1,16 @@
+services:
+    mock-nginx:
+        ports:
+            - "80:80"
+        volumes:
+            - ./nginx/dev.conf.d/nginx.conf:/etc/nginx/nginx.conf
+            - ./nginx/dev.conf.d/site.conf:/etc/nginx/conf.d/site.conf
+
+    mock-frontend:
+        build:
+            dockerfile: dev.Dockerfile
+
+
+    mock-backend:
+        build:
+            dockerfile: dev.Dockerfile

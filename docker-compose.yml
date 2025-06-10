@@ -2,11 +2,6 @@ services:
     mock-nginx:
         image: nginx:latest
         restart: unless-stopped
-        ports:
-            - "80:80"
-        volumes:
-            - ./nginx/dev.conf.d/nginx.conf:/etc/nginx/nginx.conf
-            - ./nginx/dev.conf.d/site.conf:/etc/nginx/conf.d/site.conf
         environment:
             TZ: Europe/Moscow
         networks:
@@ -37,7 +32,6 @@ services:
         restart: unless-stopped
         build:
             context: ./frontend
-            dockerfile: Dockerfile
         ports:
             - '3000:3000'
         networks:
@@ -52,7 +46,6 @@ services:
         restart: unless-stopped
         build:
             context: ./backend
-            dockerfile: Dockerfile
         ports:
             - '4200:4200'
         networks:

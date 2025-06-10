@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { PrismaService } from '@/prisma/prisma.service';
 import { RouteModule } from '@/routes/route/route.module';
 import { ThrottlerModule } from '@nestjs/throttler';
+import { AppController } from '@/app.controller';
 
 @Module({
 	imports: [
@@ -25,7 +26,7 @@ import { ThrottlerModule } from '@nestjs/throttler';
 			],
 		}),
 	],
-	controllers: [],
+	controllers: [AppController],
 	providers: [PrismaService],
 })
 export class AppModule {}
